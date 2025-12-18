@@ -15,8 +15,17 @@
 * **⚡ Turbo Repair**: Fast patching for `Bundler 2.6.2` and Ruby dependencies.
 
 ## 📸 Screenshots
-![Main Dashboard](screenshots/msf-repair.jpg) 
-![Main Dashboard](screenshots/msf-repair-2.jpg) 
+### 💎 Payload Building & Advanced Encoding
+
+![Payload Success](screenshots/msf-repair.jpg) 
+
+### 🛠️ System Repair & Metasploit Launch
+
+![Repair Success](screenshots/msf-repair-2.jpg) 
+
+### ✅ Metasploit Launch
+
+![Metasploit Launch](screenshots/metasploit.jpg)
 
 ## 🛠️ Installation & Usage
 
