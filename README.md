@@ -15,7 +15,8 @@
 * **⚡ Turbo Repair**: Fast patching for `Bundler 2.6.2` and Ruby dependencies.
 
 ## 📸 Screenshots
-*(Add your success images here to show the tool in action)*
+![Main Dashboard](screenshots/msf-repair.jpg) 
+![Main Dashboard](screenshots/msf-repair-2.jpg) 
 
 ## 🛠️ Installation & Usage
 
