@@ -37,12 +37,12 @@
 
 2.  **Give execution permissions:**
     ```bash
-    chmod +x MSF-toolkit.sh.x
+    chmod +x MSF-toolkit
     ```
 
 3.  **Run the Toolkit:**
     ```bash
-    ./MSF-toolkit.sh.x
+    ./MSF-toolkit
     ```
 
 ## 📖 Arguments Support
@@ -52,9 +52,9 @@
 | `-p <Port>` | Set LPORT (Local Port) |
 | `-P <Type>` | Platform (android, windows, linux) |
 | `-l` | Start Listener automatically after build |
-| `-fix` | Run the Turbo Repair engine |
-| `-install` | Fresh install of Metasploit & dependencies |
-| `-gui` | Launch the Interactive Menu |
+| `--fix` | Run the Turbo Repair engine |
+| `--install` | Fresh install of Metasploit & dependencies |
+| `--gui` | Launch the Interactive Menu |
 
 ---
 
