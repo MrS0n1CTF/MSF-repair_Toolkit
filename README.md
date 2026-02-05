@@ -31,7 +31,7 @@
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/MrS0n1CTF/MSF-repair_ToolKit](https://github.com/MrS0n1CTF/MSF-repair_ToolKit)
+    git clone https://github.com/MrS0n1CTF/MSF-repair_ToolKit
     cd MSF-repair_ToolKit
     ```
 
