@@ -1,69 +1,129 @@
-
-# 🦅 MSF-repair_ToolKit (V1.0 Stable)
-**Developed by: MR-SONICTF** *The Ultimate Powerhouse for Metasploit Management on Termux.*
+# Dominance Engine v6.5
+Metasploit Deployment & Payload Automation Toolkit for Termux
 
 ---
 
-## 🛡️ Overview
-**MSF-repair_ToolKit** is a professional-grade framework designed to automate the installation, repair, and management of the Metasploit-Framework on Android (Termux). This tool is the successor of several private development versions, now officially released as **V1.0** to provide a stable environment for security researchers.
+## Project Purpose
 
-## 🚀 Key Features
-* **🛠️ Auto-Fix Engine**: Solves the famous `Nokogiri` and `Gumbo-parser` installation errors automatically.
-* **💎 Advanced Payload Builder**: Generate encrypted payloads (APK, EXE, ELF) with multiple encoding iterations (e.g., *shikata_ga_nai*).
-* **📡 Instant Listener**: One-click setup for `multi/handler` to catch your shells immediately.
-* **📦 Hangar (Secure Storage)**: Integrated management system to track and list all your generated payloads with file sizes.
-* **⚡ Turbo Repair**: Fast patching for `Bundler 2.6.2` and Ruby dependencies.
+This project was built to provide a **reliable, reproducible, and stable method**
+for deploying, repairing, and operating the Metasploit Framework in constrained
+Linux environments such as **Android Termux**.
 
-## 📸 Screenshots
-### 💎 Payload Building & Advanced Encoding
+The primary goal is **environment stability and automation**, not exploitation.
+The engine focuses on solving recurring dependency and build failures related to
+Ruby, Bundler, Nokogiri, and Gumbo, which commonly break Metasploit installations
+on non-standard platforms.
 
-![Payload Success](screenshots/sonic_1.jpg) 
+---
 
-### 🛠️ System Repair & Metasploit Launch
+## Threat Model & Scope
 
-![Repair Success](screenshots/sonic_2.jpg) 
+This toolkit does **not introduce new exploits** and does **not alter Metasploit
+payload logic or internal modules**. It acts strictly as an automation and
+orchestration layer on top of existing open-source tooling.
 
-### ✅ Metasploit Launch
+### In Scope
+- Dependency installation and repair
+- Metasploit framework deployment
+- Automated payload generation via `msfvenom`
+- Local artifact storage and tracking
+
+### Out of Scope
+- Zero-day exploitation
+- Unauthorized access or lateral movement
+- Persistence mechanisms
+- Command and Control (C2) infrastructure
+- Automatic listener or handler management
+
+---
+
+## Architecture Overview
+
+The engine is designed as a layered system with clear separation of concerns:
+
+1. **System Layer**
+   - Handles package installation and environment preparation
+   - Adapts to Termux filesystem and package constraints
+
+2. **Repair Layer**
+   - Fixes Ruby, Bundler, and Nokogiri build failures
+   - Applies manual header patching when required
+   - Forces compilation using system libraries for stability
+
+3. **Execution Layer**
+   - Wraps `msfvenom` execution inside a controlled subprocess
+   - Provides execution feedback without modifying Metasploit internals
+
+4. **Storage Layer**
+   - Stores generated payloads in a dedicated directory
+   - Enables easy inspection, tracking, and cleanup of artifacts
+
+---
+
+## Design Decisions
+
+- Metasploit is executed **as-is** without patching its source code
+- All system calls are isolated and executed explicitly
+- No background services or listeners are started automatically
+- Payload generation requires explicit user-supplied parameters
+- No persistence or post-exploitation logic is implemented
+
+---
+
+## Defensive Perspective
+
+From a defensive and blue-team perspective, this toolkit can be used to:
+
+- Reproduce attacker payload generation techniques in a controlled lab
+- Test endpoint detection and response (EDR) solutions
+- Analyze how encoding and iteration affect payload signatures
+- Validate SOC detection rules and alerting pipelines
+- Train analysts on real-world attacker tooling behavior
+
+---
+
+## Screenshots & Runtime Evidence
+
+### Payload Build Engine & Encoders
+Demonstrates payload generation workflow, encoder selection, and storage handling.
+
+![Payload Engine](screenshots/sonic_1.jpg)
+
+---
+
+### Emergency Repair Sequence
+Shows automated recovery of Ruby, Bundler, and Nokogiri failures.
+
+![Repair Engine](screenshots/sonic_2.jpg)
+
+---
+
+### Metasploit Framework Launch
+Validates successful deployment and execution of Metasploit on Termux.
 
 ![Metasploit Launch](screenshots/metasploit.jpg)
 
-## 🛠️ Installation & Usage
+---
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/MrS0n1CTF/MSF-repair_ToolKit
-    cd MSF-repair_ToolKit
-    ```
+## Known Limitations
 
-2.  **Give execution permissions:**
-    ```bash
-    chmod +x MSF-toolkit.py
-    ```
-
-3.  **Run the Toolkit:**
-    ```bash
-    python3 MSF-toolkit.py
-    ```
-
-## 📖 Arguments Support
-| Argument | Function |
-| :--- | :--- |
-| `-h <IP>` | Set LHOST (Local Host) |
-| `-p <Port>` | Set LPORT (Local Port) |
-| `-P <Type>` | Platform (android, windows, linux) |
-| `-l` | Start Listener automatically after build |
-| `--fix` | Run the Turbo Repair engine |
-| `--install` | Fresh install of Metasploit & dependencies |
-| `--gui` | Launch the Interactive Menu |
+- Designed specifically for Termux-based environments
+- Requires significant storage space during installation
+- Payload execution and listener management are not handled
+- No sandboxing or containment is provided by default
 
 ---
 
-## ⚠️ Disclaimer
-This tool is for **educational purposes** and **authorized penetration testing** only. The developer (**MR-SONICTF**) is not responsible for any misuse or illegal activities.
+## Legal & Ethical Notice
 
-## 📱 Contact Developer
-* **Telegram**: [@Mr_S0n1CTF](https://t.me/Mr_S0n1CTF)
-* **GitHub**: [MrS0n1CTF](https://github.com/MrS0n1CTF)
+This project is intended **strictly for educational purposes, security research,
+and authorized penetration testing**.
+
+The author does not condone or support illegal activity.
+Users are fully responsible for ensuring compliance with all applicable laws
+and regulations in their jurisdiction.
 
 ---
-© 2025 MR-SONICTF | Built for Digital Dominance.
+
+© 2026 MR-SONICTF  
+Built for controlled environments, research accuracy, and operational stability.
