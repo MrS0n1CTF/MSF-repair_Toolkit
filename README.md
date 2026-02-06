@@ -17,11 +17,11 @@
 ## 📸 Screenshots
 ### 💎 Payload Building & Advanced Encoding
 
-![Payload Success](screenshots/MSF-toolkit-1.jpg) 
+![Payload Success](screenshots/sonic_1.jpg) 
 
 ### 🛠️ System Repair & Metasploit Launch
 
-![Repair Success](screenshots/MSF-toolkit-2.jpg) 
+![Repair Success](screenshots/sonic_2.jpg) 
 
 ### ✅ Metasploit Launch
 
@@ -37,12 +37,12 @@
 
 2.  **Give execution permissions:**
     ```bash
-    chmod +x MSF-toolkit
+    chmod +x MSF-toolkit.py
     ```
 
 3.  **Run the Toolkit:**
     ```bash
-    ./MSF-toolkit
+    python3 MSF-toolkit.py
     ```
 
 ## 📖 Arguments Support
